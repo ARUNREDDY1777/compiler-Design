@@ -1,0 +1,12 @@
+%{
+#include<stdio.h>
+%}
+%%
+[a-zA-Z] { printf("apricon ");}
+. { printf("%c", yytext[0]);}
+%%
+int yywrap(){}
+int main()
+{
+yylex();
+}

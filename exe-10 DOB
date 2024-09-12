@@ -1,0 +1,15 @@
+%{
+%}
+
+%%
+(0[1-9]|[1-2][0-9])-02-(19[0-9]{2}|20[0-1][0-9]|202[0-3]) printf("Valid DoB");
+(0[1-9]|[1-2][0-9]|30|31)-(01|0[3-9]|1[0-2])-(20[0-1][0-9]|202[0-3]) printf("Valid DoB");
+.* printf("Invalid DoB");
+%%
+int yywrap(){}
+int main()
+{
+ printf("Enter the dob:");
+ yylex();
+ return 0;
+}

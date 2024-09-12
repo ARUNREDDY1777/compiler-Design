@@ -1,0 +1,22 @@
+%{
+int positive=0;
+int negative =0;
+%}
+
+%%
+
+[0-9]+ {positive ++;} 
+-[0-9]+ {negative ++;}
+
+%%
+int yywrap(void) {}
+
+int main()
+{
+
+printf("\n enter the numbers:\n");
+yylex();
+printf("\n positive count is:%d\n",positive);
+printf("\n negative count is:%d\n",negative);
+printf("\n");
+}

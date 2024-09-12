@@ -1,0 +1,19 @@
+%{
+%}
+
+%%
+
+[A-Z]+ {printf("\n It is capital word\n");}
+
+[A-Z a-z]+ {printf("\n It is not a capital word\n");};
+
+%%
+int yywrap(void) {}
+
+int main()
+{
+ printf("\nEnter the input :");
+ yylex();
+ printf("\n");
+ return 0;
+}

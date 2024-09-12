@@ -1,0 +1,16 @@
+%{
+float op1=6,op2=7;
+%}
+%%
+"+" {printf("sum=%1f",op1+op2);}
+"-" {printf("diff=%1f",op1-op2);}
+"*" {printf("mul=%1f",op1*op2);}
+"/" {printf("div=%1f",op1/op2);}
+. {printf("enter proper operator");}
+%%
+int yywrap(){}
+int main()
+{
+printf("Enter the operator::\n");
+yylex();
+}
